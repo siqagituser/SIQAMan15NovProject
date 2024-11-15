@@ -9,17 +9,18 @@
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="PackageA">1.0</value>
+    <value name="PackX">1.0</value>
   </record>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">30</value>
+  <value name="build">31</value>
   <null name="description"/>
   <value name="created_date">15-11-2024 04:36:25 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2024-11-15T05:20:49.307087115Z</value>
+  <value name="lastUpdated">2024-11-15T05:22:27.182596023Z</value>
   <value name="wmProjectId">fl4da3ccd946c7e3f331b414</value>
   <value name="creator">siqa admin</value>
 </Values>
