@@ -10,6 +10,11 @@ packages:
 - name: WmJDBCAdapter
   wpmServer: https://packages.webmethods.io
   wpmRegistry: softwareag
+- name: PackX
+  gitServerName: SIQAPsur
+  gitUrl: https://github.com/prabhakarsag
+  gitUsername: prabhakarsag
+  gitBranch: main
 services:
 - serviceName: project.siqaman15nov.integrations:Sum
   packages:
