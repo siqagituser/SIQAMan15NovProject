@@ -11,14 +11,18 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: softwareag
 services:
-- serviceName: project.siqaman15nov.integrations:SIQAAdapterFlow
+- serviceName: project.siqaman15nov.integrations:Sum
   packages:
   - name: SIQAMan15NovProject
     version: "1.0"
-- serviceName: project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:DBA
+- serviceName: pub.math:addInts
   packages:
-  - name: SIQAMan15NovProject
-    version: "1.0"
+  - name: WmPublic
+    version: 11.1.0.0.2020
+- serviceName: pub.flow:debugLog
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2020
 configurationVariables:
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.startupBackoffSecs
   : "10"
