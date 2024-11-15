@@ -11,25 +11,33 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: softwareag
 - name: PackY
+  version: "1.0"
   gitServerName: SIQAPsur
   gitUrl: https://github.com/prabhakarsag
   gitUsername: prabhakarsag
   gitBranch: main
 - name: PackX
+  version: "1.0"
   gitServerName: SIQAPsur
   gitUrl: https://github.com/prabhakarsag
   gitUsername: prabhakarsag
   gitBranch: main
 services:
-- serviceName: project.siqaman15nov.integrations:Sum
+- serviceName: project.siqaman15nov.integrations:TPPFlow
   packages:
   - name: SIQAMan15NovProject
     version: "1.0"
-- serviceName: pub.math:addInts
+  - name: PackY
+    version: "1.0"
+  - name: PackX
+    version: "1.0"
+- serviceName: Serv_1:Sum
   packages:
-  - name: WmPublic
-    version: 11.1.0.0.2020
-- serviceName: pub.flow:debugLog
+  - name: PackX
+    version: "1.0"
+  - name: PackY
+    version: "1.0"
+- serviceName: pub.math:addInts
   packages:
   - name: WmPublic
     version: 11.1.0.0.2020
@@ -38,15 +46,10 @@ configurationVariables:
   : "10"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.poolable
   : "false"
-  jdbc.jdbcTestPool.waitingThread: "0"
-  jdbc.jdbcTestPool.minConns: "0"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.startupRetryCount
   : "0"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.poolIncrementSize
   : "1"
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.user
-  : sa
-  jdbc.jdbcTestPool.expireTime: "60000"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.databaseName
   : SIQACloud
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.dbType
@@ -56,41 +59,46 @@ configurationVariables:
   jdbc.jdbcTestPool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/jdbcTestPool.log;ddtdbg.ProtocolTraceShowTime=true
   jdbc.jdbcTestPool.maxConns: "10"
   jdbc.jdbcTestPool.userid: root
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.expireTimeout
-  : "1000"
-  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionEnabled
   : "false"
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.minimumPoolSize
-  : "1"
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.password
-  : "{AES}B2Xqma4Ost5nVUiXctJydQ=="
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.maximumPoolSize
   : "10"
   jdbc.jdbcTestPool.spyenabled: "false"
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.driverType
-  : Progress® DataDirect®
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.datasourceClass
   : com.wm.dd.jdbcx.sqlserver.SQLServerDataSource
   jdbc.jdbcTestPool.snoopenabled: "false"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.trustStore
   : ""
-  jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
   jdbc.jdbcTestPool.spyparms: SpyAttributes=(log=(file)logs/spy/jdbcTestPool.log;logTName=yes;timestamp=yes)
-  jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
-  jdbc.jdbcTestPool.poolThreshold: "0"
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.heartBeatInterval
-  : "0"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.keyStore
   : ""
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.transactionType
   : NO_TRANSACTION
-  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.serverName
-  : vmiboint01
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.blockingTimeout
   : "1000"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.networkProtocol
   : tcp
-  jdbc.jdbcTestPool.useSSL: "false"
   ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.portNumber
   : "1433"
+  jdbc.jdbcTestPool.waitingThread: "0"
+  jdbc.jdbcTestPool.minConns: "0"
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.user
+  : sa
+  jdbc.jdbcTestPool.expireTime: "60000"
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.expireTimeout
+  : "1000"
+  jdbc.jdbcTestPool.driverAlias: MySQL Database Java Connector Driver
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.password
+  : "{AES}B2Xqma4Ost5nVUiXctJydQ=="
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.driverType
+  : Progress® DataDirect®
+  jdbc.jdbcTestPool.password: "{AES}er+I3U8nDVm8F4DBRST1+A=="
+  jdbc.jdbcTestPool.dbURL: jdbc:mysql://mysql.test.local:3306/webm
+  jdbc.jdbcTestPool.poolThreshold: "0"
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionManagerSettings.heartBeatInterval
+  : "0"
+  ? artConnection.SIQAMan15NovProject.project.siqaman15nov.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_15Nov.connectionSettings.serverName
+  : vmiboint01
+  jdbc.jdbcTestPool.useSSL: "false"
